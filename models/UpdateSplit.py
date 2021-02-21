@@ -59,7 +59,7 @@ class LocalUpdate(object):
                 # Second
                 optimizerSecond.zero_grad()
                 labels = labels.clone()
-                h = clientH.detach().requires_grad_()
+                h = clientH
                 # out = clientOut.detach().requires_grad_()
                 logits = netSecond(imagesSecond, h)
                 loss = self.loss_func(logits, labels.long())
